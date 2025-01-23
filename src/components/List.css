@@ -1,0 +1,92 @@
+.expense-list-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.expense-table thead {
+    background: linear-gradient(to right, #ff8008, #ffc837);
+    color: white;
+}
+
+.expense-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.expense-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.expense-table tbody tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.expense-table tbody tr:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.expense-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.expense-category {
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .expense-list-container {
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+    .expense-table thead {
+        display: none;
+    }
+
+    .expense-table, 
+    .expense-table tbody, 
+    .expense-table tr, 
+    .expense-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .expense-table tr {
+        margin-bottom: 10px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .expense-table td {
+        text-align: right;
+        padding: 10px 15px;
+        position: relative;
+    }
+
+    .expense-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}
